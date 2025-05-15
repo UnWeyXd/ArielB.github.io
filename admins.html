@@ -140,38 +140,60 @@
 
       <!-- Upload Course PDFs Section -->
       <section id="upload-course-pdfs" class="mb-5">
-        <h2 class="section-heading">Subir PDFs por Curso</h2>
+        <h2 class="section-heading">Subir Material para Cursos</h2>
         <div class="card">
           <div class="card-body">
-            <form id="uploadCoursePdfForm">
+            <form id="uploadPdfForm">
               <div class="mb-3">
-                <label for="courseSelect" class="form-label">Seleccionar Curso</label>
-                <select class="form-select" id="courseSelect" required>
-                  <option value="">Seleccionar curso</option>
-                  <option value="1A">1A</option>
-                  <option value="1B">1B</option>
-                  <option value="2A">2A</option>
-                  <option value="2B">2B</option>
-                  <option value="3A">3A</option>
-                  <option value="3B">3B</option>
-                  <!-- Agregar más cursos según sea necesario -->
+                <label for="pdfCourse" class="form-label">Curso</label>
+                <select class="form-select" id="pdfCourse" required>
+                  <option value="" disabled selected>Seleccionar curso</option>
+                  <option value="6A">6A</option>
+                  <option value="6B">6B</option>
+                  <option value="6C">6C</option>
                 </select>
               </div>
               <div class="mb-3">
-                <label for="pdfCategory" class="form-label">Seleccionar Categoría</label>
-                <select class="form-select" id="pdfCategory" required>
-                  <option value="">Seleccionar categoría</option>
-                  <option value="material">Material para el curso</option>
-                  <option value="horario">Horario</option>
-                  <option value="calificaciones">Calificaciones</option>
+                <label for="pdfSection" class="form-label">Sección</label>
+                <select class="form-select" id="pdfSection" required>
+                  <option value="" disabled selected>Seleccionar sección</option>
+                  <option value="cronograma">Cronograma</option>
+                  <option value="lista-utiles">Lista de Útiles</option>
                 </select>
               </div>
               <div class="mb-3">
-                <label for="coursePdf" class="form-label">Archivo PDF</label>
-                <input type="file" class="form-control" id="coursePdf" accept="application/pdf" required>
+                <label for="pdfFile" class="form-label">Archivo PDF</label>
+                <input type="file" class="form-control" id="pdfFile" accept="application/pdf" required>
               </div>
               <button type="submit" class="btn btn-primary">Subir PDF</button>
             </form>
+
+            <script>
+              document.getElementById('uploadPdfForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formData = new FormData();
+                formData.append('course', document.getElementById('pdfCourse').value);
+                formData.append('section', document.getElementById('pdfSection').value);
+                formData.append('pdf', document.getElementById('pdfFile').files[0]);
+
+                try {
+                  const response = await fetch('/api/upload-pdf', {
+                    method: 'POST',
+                    body: formData,
+                  });
+
+                  if (response.ok) {
+                    alert('PDF subido exitosamente.');
+                    document.getElementById('uploadPdfForm').reset();
+                  } else {
+                    alert('Error al subir el PDF.');
+                  }
+                } catch (error) {
+                  console.error('Error al subir PDF:', error);
+                  alert('Error al subir el PDF.');
+                }
+              });
+            </script>
           </div>
         </div>
       </section>
@@ -321,6 +343,27 @@
 
         // Initial load of announcements
         loadAnnouncements();
+      });
+    </script>
+    <script>
+      document.getElementById('announcementForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const title = document.getElementById('announcementTitle').value;
+        const content = document.getElementById('announcementContent').value;
+        const date = new Date().toLocaleDateString();
+
+        const newAnnouncement = { title, content, date };
+
+        // Obtener anuncios existentes de localStorage
+        const announcements = JSON.parse(localStorage.getItem('announcements')) || [];
+        announcements.push(newAnnouncement);
+
+        // Guardar en localStorage
+        localStorage.setItem('announcements', JSON.stringify(announcements));
+
+        alert('Anuncio publicado exitosamente.');
+        document.getElementById('announcementForm').reset();
       });
     </script>
   </body>

@@ -5,246 +5,70 @@
     <title>PLATAFORMA ESTUDIANTIL CIC</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-      :root {
-        --primary-color: #1d4f91; /* deeper blue */
-        --secondary-color: #e0f7fa; /* light blue */
-        --accent-color: #0288d1; /* vibrant blue */
-        --text-color: #FFFFFF;
-        --light-color: #e0f7fa;
-      }
-      body {
-        font-family: 'Roboto', sans-serif;
-        color: #212529;
-        background-color: #f0f8ff;
-      }
-      .navbar-custom {
-        background-color: var(--primary-color);
-      }
-      .navbar-custom .navbar-brand,
-      .navbar-custom .nav-link {
-        color: white;
-      }
-      .navbar-custom .nav-link:hover {
-        color: var(--secondary-color);
-      }
-      .card {
-        transition: transform 0.3s;
-        margin-bottom: 20px;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        background-color: #ffffff;
-        color: #212529;
-      }
-      .card:hover {
-        transform: translateY(-5px);
-      }
-      .btn-primary {
-        background-color: var(--primary-color);
-        border-color: var(--primary-color);
-        font-size: 1.1rem;
-        padding: 0.75rem 1.25rem;
-        border-radius: 8px;
-      }
-      .btn-primary:hover {
-        background-color: var(--accent-color);
-        border-color: var(--accent-color);
-      }
-      .btn-secondary {
-        font-size: 1.1rem;
-        padding: 0.75rem 1.25rem;
-        border-radius: 8px;
-      }
-      .footer {
-        background-color: var(--primary-color);
-        color: white;
-        padding: 20px 0;
-      }
-      #login-container, #admin-login-container {
-        max-width: 400px;
-        margin: 50px auto;
-      }
-      .feature-icon {
-        font-size: 3rem;
-        color: var(--primary-color);
-        margin-bottom: 1rem;
-      }
-      .section-heading {
-        position: relative;
-        padding-bottom: 10px;
-        margin-bottom: 30px;
-        color: var(--primary-color);
-      }
-      .section-heading:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 50px;
-        height: 3px;
-        background-color: var(--accent-color);
-      }
-      #whiteboard-container {
-        width: 100%;
-        height: 600px;
-        background-color: white;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-      }
-      .teacher-card {
-        text-align: center;
-      }
-      .teacher-img {
-        width: 150px;
-        height: 150px;
-        object-fit: cover;
-        border-radius: 50%;
-        margin-bottom: 15px;
-      }
-      .announcement {
-        background-color: #fff;
-        padding: 15px;
-        border-radius: 5px;
-        margin-bottom: 20px;
-        border-left: 4px solid var(--primary-color);
-        color: #212529;
-      }
-      .pdf-viewer {
-        width: 100%;
-        height: 600px;
-        border: none;
-      }
-      #screenShareContainer {
-        display: none;
-        width: 100%;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        background: #f8f9fa;
-        padding: 20px;
-        margin-top: 20px;
-      }
-      .admin-section {
-        margin-bottom: 30px;
-        padding: 20px;
-        background-color: white;
-        border-radius: 5px;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      }
-      #map {
-        height: 400px;
-        width: 100%;
-        border-radius: 5px;
-      }
-      .hidden {
-        display: none !important;
-      }
-      .alert {
-        border-radius: 8px;
-        margin-bottom: 20px;
-      }
-      .success-badge {
-        background-color: #28a745;
-        color: white;
-        padding: 0.25rem 0.5rem;
-        border-radius: 0.25rem;
-        font-size: 0.875rem;
-        margin-left: 0.5rem;
-      }
-      .modal-header {
-        background-color: var(--primary-color);
-        color: white;
-      }
-    </style>
+    <link rel="stylesheet" href="index.css">
   </head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-custom">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-          <img src="imagenes/logocole.png" alt="Logo CIC" style="height: 40px; margin-right: 10px;"> PLATAFORMA ESTUDIANTIL CIC
+    <nav class="navbar navbar-expand-lg navbar-custom sticky-top" id="navbar">
+      <div class="container d-flex justify-content-center">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+          <img src="imagenes/logocole.png" alt="Logo CIC" style="height: 40px; margin-right: 10px;"> 
+          <span>PLATAFORMA ESTUDIANTIL CIC</span>
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#home">Inicio</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#about">Nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#announcements">Anuncios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#location">Ubicación</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contact">Contacto</a>
-            </li>
-            <li class="nav-item" id="studentLoginNavItem">
-              <a class="nav-link" href="#login">Estudiante Login</a>
-            </li>
-            <li class="nav-item" id="adminLoginNavItem">
-              <a class="nav-link" href="#admin-login-section">Administrador Login</a>
-            </li>
-            <li class="nav-item hidden" id="logoutNavItem">
-              <a class="nav-link" href="#" id="logoutNavLink">Cerrar Sesión</a>
-            </li>
+        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item"><a class="nav-link" href="#home">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">Nosotros</a></li>
+            <li class="nav-item"><a class="nav-link" href="#announcements">Anuncios</a></li>
+            <li class="nav-item"><a class="nav-link" href="#location">Ubicación</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contacto</a></li>
           </ul>
         </div>
       </div>
     </nav>
-  
+
     <!-- Main Content -->
     <div class="container py-5">
       <!-- Home Section -->
       <section id="home" class="mb-5">
         <div class="row align-items-center">
           <div class="col-lg-6">
-            <h1 class="fw-bold mb-4" style="color: var(--primary-color);">Bienvenido a la Plataforma Estudiantil CIC</h1>
-            <p class="lead" style="color: #212529;">Una plataforma educativa integral para nuestra comunidad escolar.</p>
-            <p style="color: #212529;">Accede a tus calificaciones, horarios, información de profesores y herramientas colaborativas en un solo lugar.</p>
-            <a href="#login" class="btn btn-primary btn-lg mt-3">Estudiante Login</a>
-            <a href="#admin-login-section" class="btn btn-secondary btn-lg mt-3 ms-2">Administrador Login</a>
+            <h1 class="fw-bold mb-4 slide-in-left" style="color: var(--primary-color);">Bienvenido a la Plataforma Estudiantil CIC</h1>
+            <p class="lead fade-in" style="color: #212529;">Una plataforma educativa integral para nuestra comunidad escolar.</p>
+            <p class="fade-in" style="color: #212529;">Accede a tus calificaciones, horarios, información de profesores y herramientas colaborativas en un solo lugar.</p>
+            <a href="login_estudiante.html" class="btn btn-primary btn-lg mt-3 bounce btn-white">Estudiante Login</a>
+            <a href="login_administrador.html" class="btn btn-secondary btn-lg mt-3 ms-2 bounce btn-white">Administrador Login</a>
           </div>
           <div class="col-lg-6 text-center">
-            <img src="imagenes/logocole.png" alt="Logo CIC" class="img-fluid rounded mb-4" style="max-height: 2000px;">
-           
-          </div>
-        </div>
-        
-        <div class="row mt-5">
-          <div class="col-md-4 text-center">
-            <div class="feature-icon">
-              <i class="fas fa-user-graduate"></i>
-            </div>
-            <h3 style="color: var(--primary-color);">Portal Estudiantil</h3>
-            <p style="color: #212529;">Acceso a calificaciones, horarios y comunicación con profesores.</p>
-          </div>
-          <div class="col-md-4 text-center">
-            <div class="feature-icon">
-              <i class="fas fa-chalkboard-teacher"></i>
-            </div>
-            <h3 style="color: var(--primary-color);">Pizarra Digital</h3>
-            <p style="color: #212529;">Colabora en tiempo real con profesores y compañeros.</p>
-          </div>
-          <div class="col-md-4 text-center">
-            <div class="feature-icon">
-              <i class="fas fa-bullhorn"></i>
-            </div>
-            <h3 style="color: var(--primary-color);">Anuncios</h3>
-            <p style="color: #212529;">Mantente informado sobre novedades y eventos.</p>
+            <img src="imagenes/logocole.png" alt="Logo CIC" class="img-fluid rounded mb-4 zoom-in" style="max-height: 200px;">
           </div>
         </div>
       </section>
-  
+
+      <!-- Carrusel de Imágenes -->
+      <section id="carousel" class="mb-5">
+        <div class="carousel-container full-width">
+          <div class="carousel-track">
+            <img src="imagenes/colegio6.jpg" alt="Imagen 1" class="carousel-image">
+            <img src="imagenes/colegio1.jpg" alt="Imagen 2" class="carousel-image">
+            <img src="imagenes/colegio2.jpg" alt="Imagen 3" class="carousel-image">
+            <img src="imagenes/colegio3.jpg" alt="Imagen 4" class="carousel-image">
+            <img src="imagenes/colegio4.jpg" alt="Imagen 5" class="carousel-image">
+            <img src="imagenes/colegio5.jpg" alt="Imagen 6" class="carousel-image">
+          </div>
+          <button class="carousel-button prev" id="prevButton">&#10094;</button>
+          <button class="carousel-button next" id="nextButton">&#10095;</button>
+        </div>
+      </section>
+
       <!-- About Section -->
       <section id="about" class="mb-5">
-        <h2 class="section-heading">Nosotros</h2>
+        <h2 class="section-heading fade-in">Nosotros</h2>
         <div class="card">
-          <div class="card-body" style="color: #212529;">
+          <div class="card-body fade-in" style="color: #212529;">
             <p>El Colegio Inglés Católico (CIC) es una obra de la Congregación de Nuestra Señora de la Caridad del Buen Pastor, cuya trayectoria lleva casi 130 años en la labor educativa. Nuestra misión está inspirada en el carisma y pedagogía del Buen Pastor. La comunidad estudiantil tiene una formación holística e integral desde el catolicismo, en la cual se desarrollan actualmente las dimensiones del "ser, saber, hacer y decidir", relacionadas al cosmos y la Madre Tierra para el vivir bien.</p>
             <p>En 1891, las religiosas de dicha congregación llegaron a Bolivia para dedicar su vida a la educación de la población juvenil, sin distinguir su situación, pues algunos/as de ellos/as se encontraban en situaciones de vulnerabilidad. Es así, que se les ayuda a reinsertarse en la sociedad. Posteriormente, esta obra llegó a todos los hogares de Bolivia para transformar la realidad desde la fe.</p>
             <p>Esta casa de estudios se fundó con el nombre de Colegio del Buen Pastor mediante el Decreto Supremo (DS) del 4 de abril de 1891. El siguiente año, a través del DS del 24 de mayo de 1892, la institución pasa a ser el Colegio Nuestra Señora de La Paz, adoptando finalmente la denominación de "Colegio Inglés Católico".</p>
@@ -277,50 +101,29 @@
   
       <!-- Announcements Section -->
       <section id="announcements" class="mb-5">
-        <h2 class="section-heading">Anuncios</h2>
-        <div id="announcements-container">
+        <h2 class="section-heading fade-in">Anuncios</h2>
+        <div id="announcements-container" class="row">
           <!-- Los anuncios se cargarán dinámicamente aquí -->
         </div>
       </section>
   
       <!-- Location Section -->
       <section id="location" class="mb-5">
-        <h2 class="section-heading">Dónde Encontrarnos</h2>
+        <h2 class="section-heading fade-in">Dónde Encontrarnos</h2>
         <div class="card">
           <div class="card-body">
-            <div id="map"></div>
-            <script src="https://maps.googleapis.com/maps/api/js?key=TU_CLAVE_DE_API&callback=initMap" async defer></script>
-            <script>
-              // Initialize Google Map
-              function initMap() {
-                const cicLocation = { lat: -16.507715, lng: -68.126488 }; // Coordenadas del mapa proporcionado
-                const map = new google.maps.Map(document.getElementById("map"), {
-                  zoom: 15,
-                  center: cicLocation,
-                });
-                const marker = new google.maps.Marker({
-                  position: cicLocation,
-                  map: map,
-                  title: "Colegio Inglés Católico",
-                });
-              }
-            </script>
-            <style>
-              #map {
-                height: 400px;
-                width: 100%;
-                border-radius: 5px;
-              }
-            </style>
+            <!-- Reemplazar el mapa actual con el iframe -->
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4762.1143653130985!2d-68.1421519884319!3d-16.49418028418295!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915f216fdf9970b5%3A0x1fcd1b82ef148497!2sColegio%20Ingles%20Catolico!5e1!3m2!1ses-419!2sbo!4v1746707348801!5m2!1ses-419!2sbo" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            
           </div>
         </div>
       </section>
   
       <!-- Contact Section -->
       <section id="contact" class="mb-5">
-        <h2 class="section-heading">Contáctanos</h2>
+        <h2 class="section-heading fade-in">Contáctanos</h2>
         <div class="card">
-          <div class="card-body">
+          <div class="card-body fade-in">
             <form id="contactForm">
               <div class="mb-3">
                 <label for="name" class="form-label">Nombre Completo</label>
@@ -343,1022 +146,104 @@
           </div>
         </div>
       </section>
-  
-      <!-- Student Login Section -->
-      <section id="login" class="mb-5">
-        <div id="login-container">
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title text-center mb-4">Iniciar Sesión (Estudiante)</h3>
-              <div id="login-alert" class="alert alert-success alert-dismissible fade show hidden" role="alert">
-                Usuario creado exitosamente: <strong>SantiagoVargas</strong> ya está habilitado.
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-              </div>
-              <form id="studentLoginForm">
-                <div class="mb-3">
-                  <label for="studentUsername" class="form-label">Usuario</label>
-                  <input type="text" class="form-control" id="studentUsername" required>
-                </div>
-                <div class="mb-3 position-relative">
-                  <label for="studentPassword" class="form-label">Contraseña</label>
-                  <input type="password" class="form-control" id="studentPassword" required>
-                  <button type="button" class="btn btn-sm btn-outline-secondary position-absolute top-50 end-0 translate-middle-y me-2" id="toggleStudentPassword">
-                    <i class="fas fa-eye"></i>
-                  </button>
-                </div>
-                <div class="d-grid gap-2">
-                  <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-  
-      <!-- Administrator Login Section -->
-      <section id="admin-login-section" class="mb-5">
-        <div id="admin-login-container">
-          <div class="card">
-            <div class="card-body">
-              <h3 class="card-title text-center mb-4">Iniciar Sesión (Administrador)</h3>
-              <form id="adminLoginForm">
-                <div class="mb-3">
-                  <label for="adminUsername" class="form-label">Usuario</label>
-                  <input type="text" class="form-control" id="adminUsername" required>
-                </div>
-                <div class="mb-3 position-relative">
-                  <label for="adminPassword" class="form-label">Contraseña</label>
-                  <input type="password" class="form-control" id="adminPassword" required>
-                  <button type="button" class="btn btn-sm btn-outline-secondary position-absolute top-50 end-0 translate-middle-y me-2" id="toggleAdminPassword">
-                    <i class="fas fa-eye"></i>
-                  </button>
-                </div>
-                <div class="d-grid gap-2">
-                  <button type="submit" class="btn btn-primary">Iniciar Sesión</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-  
-      <!-- Student Dashboard Section -->
-      <section id="student-dashboard" class="hidden">
-        <h2 class="section-heading">Panel de Estudiante</h2>
-        <div class="row mb-4">
-          <div class="col-md-3">
-            <div class="card h-100">
-              <div class="card-body text-center">
-                <i class="fas fa-graduation-cap feature-icon"></i>
-                <h5 class="card-title">Calificaciones</h5>
-                <button class="btn btn-primary btn-lg" id="showGradesBtn">Ver Calificaciones</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card h-100">
-              <div class="card-body text-center">
-                <i class="fas fa-calendar-alt feature-icon"></i>
-                <h5 class="card-title">Horario</h5>
-                <button class="btn btn-primary btn-lg" id="showScheduleBtn">Ver Horario</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card h-100">
-              <div class="card-body text-center">
-                <i class="fas fa-chalkboard-teacher feature-icon"></i>
-                <h5 class="card-title">Profesores</h5>
-                <button class="btn btn-primary btn-lg" id="showTeachersBtn">Ver Profesores</button>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-3">
-            <div class="card h-100">
-              <div class="card-body text-center">
-                <i class="fas fa-edit feature-icon"></i>
-                <h5 class="card-title">Pizarra Digital</h5>
-                <button class="btn btn-primary btn-lg" id="showWhiteboardBtn">Abrir Pizarra</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        <!-- Student Content Area -->
-        <div id="student-content-area" class="card">
-          <div class="card-body">
-            <div id="welcome-content" class="text-center">
-              <h3>Bienvenido a la Plataforma Estudiantil CIC</h3>
-              <p>Selecciona una opción del panel superior para comenzar.</p>
-              <img src="https://source.unsplash.com/random/600x400/?education" class="img-fluid rounded mt-3" alt="Bienvenida">
-            </div>
-            
-            <!-- Grades Content -->
-            <div id="grades-content" class="hidden">
-              <h3 class="mb-4">Mis Calificaciones</h3>
-              <div class="pdf-container">
-                <p>Visualiza tus calificaciones en formato PDF:</p>
-                <div class="mb-3">
-                  <iframe class="pdf-viewer" id="gradesViewer" src="about:blank"></iframe>
-                </div>
-                <a href="#" class="btn btn-secondary btn-lg" id="downloadGradesBtn">
-                  <i class="fas fa-download"></i> Descargar PDF
-                </a>
-              </div>
-            </div>
-            
-            <!-- Schedule Content -->
-            <div id="schedule-content" class="hidden">
-              <h3 class="mb-4">Mi Horario</h3>
-              <div class="pdf-container">
-                <p>Visualiza tu horario en formato PDF:</p>
-                <div class="mb-3">
-                  <iframe class="pdf-viewer" id="scheduleViewer" src="about:blank"></iframe>
-                </div>
-                <a href="#" class="btn btn-secondary btn-lg" id="downloadScheduleBtn">
-                  <i class="fas fa-download"></i> Descargar PDF
-                </a>
-              </div>
-            </div>
-            
-            <!-- Teachers Content -->
-            <div id="teachers-content" class="hidden">
-              <h3 class="mb-4">Mis Profesores</h3>
-              <div class="row" id="teachersContainer">
-                <!-- Teachers will be loaded here -->
-              </div>
-            </div>
-            
-            <!-- Whiteboard Content -->
-            <div id="whiteboard-content" class="hidden">
-              <h3 class="mb-4">Pizarra Digital</h3>
-              <div class="d-flex justify-content-between mb-3">
-                <div>
-                  <button class="btn btn-outline-primary btn-lg me-2" id="clearWhiteboardBtn">
-                    <i class="fas fa-eraser"></i> Limpiar
-                  </button>
-                  <button class="btn btn-outline-primary btn-lg me-2" id="shareScreenBtn">
-                    <i class="fas fa-desktop"></i> Compartir Pantalla
-                  </button>
-                </div>
-                <div>
-                  <div class="input-group input-group-lg">
-                    <label class="input-group-text" for="drawingColor">Color</label>
-                    <select class="form-select" id="drawingColor">
-                      <option value="black">Negro</option>
-                      <option value="red">Rojo</option>
-                      <option value="blue">Azul</option>
-                      <option value="green">Verde</option>
-                    </select>
-                  </div>
-                </div>
-              </div>
-              <div id="whiteboard-container"></div>
-              <div id="screenShareContainer" class="mt-3">
-                <h4>Compartir Pantalla</h4>
-                <p>Pantalla compartida en tiempo real.</p>
-                <div id="screenSharePreview" class="mt-3 p-3 bg-light rounded">
-                  <p class="text-center">Vista previa de la pantalla compartida</p>
-                </div>
-                <button class="btn btn-danger btn-lg mt-3" id="stopSharingBtn">
-                  <i class="fas fa-stop-circle"></i> Detener Compartir
-                </button>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-  
-      <!-- Admin Dashboard Section -->
-      <section id="admin-dashboard" class="hidden">
-        <h2 class="section-heading">Panel de Administrador</h2>
-        <!-- Admin Navigation -->
-        <ul class="nav nav-tabs mb-4" id="adminTabs" role="tablist">
-          <li class="nav-item" role="presentation">
-            <button class="nav-link active" id="manage-students-tab" data-bs-toggle="tab" data-bs-target="#manage-students" type="button" role="tab" aria-controls="manage-students" aria-selected="true">Gestionar Estudiantes</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="manage-pdfs-tab" data-bs-toggle="tab" data-bs-target="#manage-pdfs" type="button" role="tab" aria-controls="manage-pdfs" aria-selected="false">Gestionar PDFs</button>
-          </li>
-          <li class="nav-item" role="presentation">
-            <button class="nav-link" id="manage-announcements-tab" data-bs-toggle="tab" data-bs-target="#manage-announcements" type="button" role="tab" aria-controls="manage-announcements" aria-selected="false">Gestionar Anuncios</button>
-          </li>
-        </ul>
-        <!-- Admin Tab Content -->
-        <div class="tab-content" id="adminTabContent">
-          <!-- Manage Students Tab -->
-          <div class="tab-pane fade show active" id="manage-students" role="tabpanel" aria-labelledby="manage-students-tab">
-            <div class="card mb-4">
-              <div class="card-body">
-                <h4 class="card-title">Crear Nuevo Estudiante</h4>
-                <div id="student-created-alert" class="alert alert-success alert-dismissible fade show hidden" role="alert">
-                  ¡Estudiante creado exitosamente! Se ha añadido <strong>SantiagoVargas</strong> a la plataforma.
-                  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                </div>
-                <form id="createStudentForm">
-                  <div class="row">
-                    <div class="col-md-6 mb-3">
-                      <label for="studentName" class="form-label">Nombre Completo</label>
-                      <input type="text" class="form-control" id="studentName" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                      <label for="studentEmail" class="form-label">Correo Electrónico</label>
-                      <input type="email" class="form-control" id="studentEmail" required>
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col-md-6 mb-3">
-                      <label for="newStudentUsername" class="form-label">Usuario</label>
-                      <input type="text" class="form-control" id="newStudentUsername" required>
-                    </div>
-                    <div class="col-md-6 mb-3">
-                      <label for="newStudentPassword" class="form-label">Contraseña</label>
-                      <input type="password" class="form-control" id="newStudentPassword" required>
-                    </div>
-                  </div>
-                  <div class="mb-3">
-                    <label for="studentClass" class="form-label">Clase</label>
-                    <select class="form-select" id="studentClass" required>
-                      <option value="">Seleccionar clase</option>
-                      <option value="1A">1ro A</option>
-                      <option value="1B">1ro B</option>
-                      <option value="2A">2do A</option>
-                      <option value="2B">2do B</option>
-                      <option value="3A">3ro A</option>
-                      <option value="3B">3ro B</option>
-                      <option value="4A">4to A</option>
-                      <option value="4B">4to B</option>
-                      <option value="5A">5to A</option>
-                      <option value="5B">5to B</option>
-                      <option value="6A">6to A</option>
-                      <option value="6B">6to B</option>
-                    </select>
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-lg">Crear Estudiante</button>
-                </form>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Lista de Estudiantes</h4>
-                <div class="table-responsive">
-                  <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th>ID</th>
-                        <th>Nombre</th>
-                        <th>Usuario</th>
-                        <th>Correo</th>
-                        <th>Clase</th>
-                        <th>Acciones</th>
-                      </tr>
-                    </thead>
-                    <tbody id="studentsTableBody">
-                      <tr>
-                        <td>1</td>
-                        <td>Juan Pérez</td>
-                        <td>jperez</td>
-                        <td>jperez@mail.com</td>
-                        <td>3A</td>
-                        <td>
-                          <button class="btn btn-sm btn-primary edit-student" data-id="1">Editar</button>
-                          <button class="btn btn-sm btn-danger delete-student" data-id="1">Eliminar</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>María García</td>
-                        <td>mgarcia</td>
-                        <td>mgarcia@mail.com</td>
-                        <td>4B</td>
-                        <td>
-                          <button class="btn btn-sm btn-primary edit-student" data-id="2">Editar</button>
-                          <button class="btn btn-sm btn-danger delete-student" data-id="2">Eliminar</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>Carlos López</td>
-                        <td>clopez</td>
-                        <td>clopez@mail.com</td>
-                        <td>2A</td>
-                        <td>
-                          <button class="btn btn-sm btn-primary edit-student" data-id="3">Editar</button>
-                          <button class="btn btn-sm btn-danger delete-student" data-id="3">Eliminar</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>4</td>
-                        <td>Santiago Vargas</td>
-                        <td>SantiagoVargas</td>
-                        <td>svargas@mail.com</td>
-                        <td>5A</td>
-                        <td>
-                          <button class="btn btn-sm btn-primary edit-student" data-id="4">Editar</button>
-                          <button class="btn btn-sm btn-danger delete-student" data-id="4">Eliminar</button>
-                          <span class="success-badge">Nuevo</span>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Manage PDFs Tab -->
-          <div class="tab-pane fade" id="manage-pdfs" role="tabpanel" aria-labelledby="manage-pdfs-tab">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="card mb-4">
-                  <div class="card-body">
-                    <h4 class="card-title">Subir Calificaciones</h4>
-                    <form id="uploadGradesForm">
-                      <div class="mb-3">
-                        <label for="gradesStudent" class="form-label">Estudiante</label>
-                        <select class="form-select" id="gradesStudent" required>
-                          <option value="">Seleccionar estudiante</option>
-                          <option value="1">Juan Pérez (3A)</option>
-                          <option value="2">María García (4B)</option>
-                          <option value="3">Carlos López (2A)</option>
-                          <option value="4">Santiago Vargas (5A)</option>
-                        </select>
-                      </div>
-                      <div class="mb-3">
-                        <label for="gradesPdf" class="form-label">Archivo PDF</label>
-                        <input type="file" class="form-control" id="gradesPdf" accept="application/pdf" required>
-                      </div>
-                      <button type="submit" class="btn btn-primary btn-lg">Subir Calificaciones</button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="card mb-4">
-                  <div class="card-body">
-                    <h4 class="card-title">Subir Horario</h4>
-                    <form id="uploadScheduleForm">
-                      <div class="mb-3">
-                        <label for="scheduleStudent" class="form-label">Estudiante</label>
-                        <select class="form-select" id="scheduleStudent" required>
-                          <option value="">Seleccionar estudiante</option>
-                          <option value="1">Juan Pérez (3A)</option>
-                          <option value="2">María García (4B)</option>
-                          <option value="3">Carlos López (2A)</option>
-                          <option value="4">Santiago Vargas (5A)</option>
-                        </select>
-                      </div>
-                      <div class="mb-3">
-                        <label for="schedulePdf" class="form-label">Archivo PDF</label>
-                        <input type="file" class="form-control" id="schedulePdf" accept="application/pdf" required>
-                      </div>
-                      <button type="submit" class="btn btn-primary btn-lg">Subir Horario</button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">PDFs Subidos</h4>
-                <div class="table-responsive">
-                  <table class="table table-hover">
-                    <thead>
-                      <tr>
-                        <th>ID</th>
-                        <th>Estudiante</th>
-                        <th>Tipo</th>
-                        <th>Fecha de Subida</th>
-                        <th>Acciones</th>
-                      </tr>
-                    </thead>
-                    <tbody id="pdfsTableBody">
-                      <tr>
-                        <td>1</td>
-                        <td>Juan Pérez</td>
-                        <td>Calificaciones</td>
-                        <td>10/04/2025</td>
-                        <td>
-                          <button class="btn btn-sm btn-secondary view-pdf" data-id="1">Ver</button>
-                          <button class="btn btn-sm btn-primary replace-pdf" data-id="1">Reemplazar</button>
-                          <button class="btn btn-sm btn-danger delete-pdf" data-id="1">Eliminar</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>2</td>
-                        <td>Juan Pérez</td>
-                        <td>Horario</td>
-                        <td>10/04/2025</td>
-                        <td>
-                          <button class="btn btn-sm btn-secondary view-pdf" data-id="2">Ver</button>
-                          <button class="btn btn-sm btn-primary replace-pdf" data-id="2">Reemplazar</button>
-                          <button class="btn btn-sm btn-danger delete-pdf" data-id="2">Eliminar</button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>3</td>
-                        <td>María García</td>
-                        <td>Calificaciones</td>
-                        <td>12/04/2025</td>
-                        <td>
-                          <button class="btn btn-sm btn-secondary view-pdf" data-id="3">Ver</button>
-                          <button class="btn btn-sm btn-primary replace-pdf" data-id="3">Reemplazar</button>
-                          <button class="btn btn-sm btn-danger delete-pdf" data-id="3">Eliminar</button>
-                        </td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-            </div>
-          </div>
-          <!-- Manage Announcements Tab -->
-          <div class="tab-pane fade" id="manage-announcements" role="tabpanel" aria-labelledby="manage-announcements-tab">
-            <div class="card mb-4">
-              <div class="card-body">
-                <h4 class="card-title">Crear Anuncio</h4>
-                <form id="createAnnouncementForm">
-                  <div class="mb-3">
-                    <label for="announcementTitle" class="form-label">Título</label>
-                    <input type="text" class="form-control" id="announcementTitle" required>
-                  </div>
-                  <div class="mb-3">
-                    <label for="announcementContent" class="form-label">Contenido</label>
-                    <textarea class="form-control" id="announcementContent" rows="5" required></textarea>
-                  </div>
-                  <button type="submit" class="btn btn-primary btn-lg">Publicar Anuncio</button>
-                </form>
-              </div>
-            </div>
-            <div class="card">
-              <div class="card-body">
-                <h4 class="card-title">Anuncios Publicados</h4>
-                <div id="adminAnnouncementsContainer">
-                  <div class="announcement">
-                    <h4>Nuevo Usuario Registrado: Santiago Vargas</h4>
-                    <p class="text-muted mb-1">Publicado el: 12/04/2025</p>
-                    <p>Se ha creado una nueva cuenta para el estudiante Santiago Vargas. Ya puede acceder a la plataforma utilizando sus credenciales.</p>
-                    <button class="btn btn-sm btn-danger delete-announcement">Eliminar</button>
-                  </div>
-                  <div class="announcement">
-                    <h4>Aviso de Mantenimiento de Plataforma</h4>
-                    <p class="text-muted mb-1">Publicado el: 10/04/2025</p>
-                    <p>Estimados estudiantes, les informamos que el día sábado 15 de abril la plataforma estará en mantenimiento de 8:00 a 12:00. Gracias por su comprensión.</p>
-                    <button class="btn btn-sm btn-danger delete-announcement">Eliminar</button>
-                  </div>
-                  <div class="announcement">
-                    <h4>Reunión de Padres de Familia</h4>
-                    <p class="text-muted mb-1">Publicado el: 05/04/2025</p>
-                    <p>Se convoca a todos los padres de familia a la reunión general que se llevará a cabo el día viernes 20 de abril a las 18:00 horas en el auditorio principal.</p>
-                    <button class="btn btn-sm btn-danger delete-announcement">Eliminar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  
-    <!-- User Creation Success Modal -->
-    <div class="modal fade" id="userCreatedModal" tabindex="-1" aria-labelledby="userCreatedModalLabel" aria-hidden="true">
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="userCreatedModalLabel">Usuario Creado Exitosamente</h5>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            <p>Se ha creado correctamente el usuario <strong>SantiagoVargas</strong> con la contraseña <strong>santiago123</strong>.</p>
-            <p>Este estudiante ya puede acceder a la plataforma utilizando sus credenciales.</p>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Aceptar</button>
-          </div>
-        </div>
-      </div>
     </div>
   
     <!-- Footer -->
     <footer class="footer mt-auto">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-4">
-            <h5>PLATAFORMA ESTUDIANTIL CIC</h5>
-            <p>Una plataforma educativa integral para nuestra comunidad escolar.</p>
-          </div>
-          <div class="col-md-4">
-            <h5>Enlaces Rápidos</h5>
-            <ul class="list-unstyled">
-              <li><a href="#home" class="text-white">Inicio</a></li>
-              <li><a href="#about" class="text-white">Nosotros</a></li>
-              <li><a href="#announcements" class="text-white">Anuncios</a></li>
-              <li><a href="#contact" class="text-white">Contacto</a></li>
-            </ul>
-          </div>
-          <div class="col-md-4">
-            <h5>Contacto</h5>
-            <address>
-              <i class="fas fa-map-marker-alt"></i> Av. 6 de Agosto, La Paz, Bolivia<br>
-              <i class="fas fa-phone"></i> +591 2 2112233<br>
-              <i class="fas fa-envelope"></i> info@colegiocic.edu.bo
-            </address>
-          </div>
-        </div>
-        <hr class="bg-light">
-        <div class="text-center">
-          <p>&copy; 2025 Colegio Inglés Católico. Todos los derechos reservados.</p>
-        </div>
+      <div class="container text-center">
+        <p>&copy; 2025 Colegio Inglés Católico. Todos los derechos reservados.</p>
       </div>
     </footer>
   
     <!-- JavaScript Libraries -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.min.js"></script>
-    <script src="https://maps.app.goo.gl/TruxjNe1zzFHbU1d8" async defer></script>
     <script>
-      // Initialize Google Map
-      function initMap() {
-        const cicLocation = { lat: -16.507715, lng: -68.126488 };
-        const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 15,
-          center: cicLocation,
-        });
-        const marker = new google.maps.Marker({
-          position: cicLocation,
-          map: map,
-          title: "Colegio Inglés Católico",
-        });
-      }
-      
-      $(document).ready(function() {
-        // Show the user created modal only for administrators
-        const isAdmin = $('#admin-dashboard').is(':visible'); // Check if admin dashboard is visible
-        if (isAdmin) {
-          setTimeout(function() {
-            const userCreatedModal = new bootstrap.Modal(document.getElementById('userCreatedModal'));
-            userCreatedModal.show();
-          }, 1000);
+      let lastScrollTop = 0;
+      const navbar = document.getElementById('navbar');
 
-          // Display the "Nuevo Usuario Registrado" announcement only for administrators
-          $('#adminAnnouncementsContainer').prepend(`
-            <div class="announcement">
-              <h4>Nuevo Usuario Registrado: Santiago Vargas</h4>
-              <p class="text-muted mb-1">Publicado el: 12/04/2025</p>
-              <p>Se ha creado una nueva cuenta para el estudiante Santiago Vargas. Ya puede acceder a la plataforma utilizando sus credenciales.</p>
-              <button class="btn btn-sm btn-danger delete-announcement">Eliminar</button>
-            </div>
-          `);
+      window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop) {
+          navbar.style.top = '-70px'; // Ocultar la barra de navegación
+        } else {
+          navbar.style.top = '0'; // Mostrar la barra de navegación
         }
-
-        // Remove "Nuevo Usuario Registrado" from public announcements
-        $('#announcements-container .announcement').filter(function() {
-          return $(this).find('h4').text().includes('Nuevo Usuario Registrado');
-        }).remove();
-        
-        // Also display alert in the login section for administrators
-        if (isAdmin) {
-          $('#login-alert').removeClass('hidden');
-        }
-        
-        // Pre-fill Santiago's credentials in the student login form
-        $('#studentUsername').val('SantiagoVargas');
-        $('#studentPassword').val('santiago123');
-        
-        // Smooth scroll for nav links
-        $('a[href^="#"]').on('click', function(e) {
-          e.preventDefault();
-          var target = this.hash;
-          if ($(target).length) {
-            $('html, body').animate({ scrollTop: $(target).offset().top - 70 }, 800);
-          }
-        });
-  
-        // Contact Form Submission via ContactForm Loop
-        $('#contactForm').on('submit', async function(e) {
-          e.preventDefault();
-          const name = $('#name').val();
-          const email = $('#email').val();
-          const message = $('#message').val();
-          const contactData = { name, email, message };
-          
-          try {
-            const response = await fetch('https://magicloops.dev/api/loop/6cc17cc3-1d9a-4fe2-bb69-b3ba7345fc2c/run', {
-              method: 'POST',
-              body: JSON.stringify(contactData)
-            });
-            const responseJson = await response.json();
-            alert(`Mensaje enviado. Confirmación: ${responseJson.confirmationId}`);
-            $('#contactForm')[0].reset();
-          } catch (error) {
-            console.error(error);
-            alert('Error al enviar el mensaje.');
-          }
-        });
-  
-        // Student Login: Validate multiple students and redirect to estudiante.html
-        const students = [
-          // 1A
-          { username: 'alejandro1A', password: 'ale123', course: '1A', lastName: 'González' },
-          { username: 'maria1A', password: 'maria123', course: '1A', lastName: 'Pérez' },
-          { username: 'juan1A', password: 'juan123', course: '1A', lastName: 'López' },
-          { username: 'sofia1A', password: 'sofia123', course: '1A', lastName: 'Martínez' },
-          { username: 'carlos1A', password: 'carlos123', course: '1A', lastName: 'Rodríguez' },
-          { username: 'ana1A', password: 'ana123', course: '1A', lastName: 'Hernández' },
-          { username: 'pedro1A', password: 'pedro123', course: '1A', lastName: 'García' },
-          { username: 'lucia1A', password: 'lucia123', course: '1A', lastName: 'Ramírez' },
-          { username: 'diego1A', password: 'diego123', course: '1A', lastName: 'Torres' },
-          { username: 'valeria1A', password: 'valeria123', course: '1A', lastName: 'Flores' },
-    
-          // 1B
-          { username: 'alejandro1B', password: 'ale456', course: '1B', lastName: 'Gómez' },
-          { username: 'maria1B', password: 'maria456', course: '1B', lastName: 'Díaz' },
-          { username: 'juan1B', password: 'juan456', course: '1B', lastName: 'Vargas' },
-          { username: 'sofia1B', password: 'sofia456', course: '1B', lastName: 'Morales' },
-          { username: 'carlos1B', password: 'carlos456', course: '1B', lastName: 'Ortiz' },
-          { username: 'ana1B', password: 'ana456', course: '1B', lastName: 'Castro' },
-          { username: 'pedro1B', password: 'pedro456', course: '1B', lastName: 'Suárez' },
-          { username: 'lucia1B', password: 'lucia456', course: '1B', lastName: 'Rojas' },
-          { username: 'diego1B', password: 'diego456', course: '1B', lastName: 'Mendoza' },
-          { username: 'valeria1B', password: 'valeria456', course: '1B', lastName: 'Cruz' },
-    
-          // 1C
-          { username: 'alejandro1C', password: 'ale789', course: '1C', lastName: 'Reyes' },
-          { username: 'maria1C', password: 'maria789', course: '1C', lastName: 'Jiménez' },
-          { username: 'juan1C', password: 'juan789', course: '1C', lastName: 'Figueroa' },
-          { username: 'sofia1C', password: 'sofia789', course: '1C', lastName: 'Aguilar' },
-          { username: 'carlos1C', password: 'carlos789', course: '1C', lastName: 'Navarro' },
-          { username: 'ana1C', password: 'ana789', course: '1C', lastName: 'Peña' },
-          { username: 'pedro1C', password: 'pedro789', course: '1C', lastName: 'Cabrera' },
-          { username: 'lucia1C', password: 'lucia789', course: '1C', lastName: 'Campos' },
-          { username: 'diego1C', password: 'diego789', course: '1C', lastName: 'Vega' },
-          { username: 'valeria1C', password: 'valeria789', course: '1C', lastName: 'Silva' },
-    
-          // 2A
-          { username: 'alejandro2A', password: 'ale1234', course: '2A', lastName: 'González' },
-          { username: 'maria2A', password: 'maria1234', course: '2A', lastName: 'Pérez' },
-          { username: 'juan2A', password: 'juan1234', course: '2A', lastName: 'López' },
-          { username: 'sofia2A', password: 'sofia1234', course: '2A', lastName: 'Martínez' },
-          { username: 'carlos2A', password: 'carlos1234', course: '2A', lastName: 'Rodríguez' },
-          { username: 'ana2A', password: 'ana1234', course: '2A', lastName: 'Hernández' },
-          { username: 'pedro2A', password: 'pedro1234', course: '2A', lastName: 'García' },
-          { username: 'lucia2A', password: 'lucia1234', course: '2A', lastName: 'Ramírez' },
-          { username: 'diego2A', password: 'diego1234', course: '2A', lastName: 'Torres' },
-          { username: 'valeria2A', password: 'valeria1234', course: '2A', lastName: 'Flores' },
-    
-          // Continue for all courses up to 6C...
-        ];
-    
-        $('#studentLoginForm').on('submit', function(e) {
-          e.preventDefault();
-          const username = $('#studentUsername').val();
-          const password = $('#studentPassword').val();
-    
-          const validStudent = students.find(student => student.username === username && student.password === password);
-    
-          if (validStudent) {
-            localStorage.setItem('currentStudent', JSON.stringify(validStudent)); // Save student info
-            alert(`Bienvenido, ${username} ${validStudent.lastName} del curso ${validStudent.course}!`);
-            window.location.href = 'estudiante.html'; // Redirect to estudiante.html
-          } else {
-            alert('Usuario o contraseña incorrectos.');
-          }
-        });
-  
-        // Admin Login remains demo authentication via local check
-        $('#adminLoginForm').on('submit', function(e) {
-          e.preventDefault();
-          const username = $('#adminUsername').val();
-          const password = $('#adminPassword').val();
-          
-          if (
-            (username === 'admin' && password === 'admin123') || 
-            (username === 'NicolasFlores1' && password === 'Director123')
-          ) {
-            window.location.href = 'admins.html'; // Redirect to admins.html
-          } else {
-            alert('Error de autenticación de administrador. Usuario o contraseña incorrectos.');
-          }
-        });
-  
-        // Logout
-        $('#logoutNavLink').on('click', function(e) {
-          e.preventDefault();
-          $('#student-dashboard, #admin-dashboard').addClass('hidden');
-          $('#login, #admin-login-section').removeClass('hidden');
-          $('#logoutNavItem').addClass('hidden');
-          $('#studentLoginNavItem, #adminLoginNavItem').removeClass('hidden');
-          $('html, body').animate({ scrollTop: 0 }, 300);
-        });
-  
-        // Student Dashboard Buttons
-        $('#showGradesBtn').on('click', function() {
-          $('#welcome-content, #schedule-content, #teachers-content, #whiteboard-content').addClass('hidden');
-          $('#grades-content').removeClass('hidden');
-          // In a real implementation, file URL could be set using response from FileMgmtLoop
-          $('#gradesViewer').attr('src', 'about:blank');
-          alert('Se invocará FileMgmtLoop para calificaciones en la versión completa.');
-        });
-        
-        $('#showScheduleBtn').on('click', function() {
-          $('#welcome-content, #grades-content, #teachers-content, #whiteboard-content').addClass('hidden');
-          $('#schedule-content').removeClass('hidden');
-          $('#scheduleViewer').attr('src', 'about:blank');
-          alert('Se invocará FileMgmtLoop para el horario en la versión completa.');
-        });
-        
-        $('#showTeachersBtn').on('click', function() {
-          $('#welcome-content, #grades-content, #schedule-content, #whiteboard-content').addClass('hidden');
-          $('#teachers-content').removeClass('hidden');
-          loadTeachers();
-        });
-        
-        $('#showWhiteboardBtn').on('click', function() {
-          $('#welcome-content, #grades-content, #schedule-content, #teachers-content').addClass('hidden');
-          $('#whiteboard-content').removeClass('hidden');
-          initWhiteboard();
-        });
-  
-        // Whiteboard Controls
-        $('#clearWhiteboardBtn').on('click', function() {
-          $('#whiteboard-container').html('<div class="text-center p-5 bg-light"><p>Pizarra Digital</p><p>Pizarra limpia para escribir en tiempo real.</p></div>');
-        });
-        
-        $('#shareScreenBtn').on('click', function() {
-          $('#screenShareContainer').show();
-          alert('En la versión completa, aquí se compartiría la pantalla en tiempo real.');
-        });
-        
-        $('#stopSharingBtn').on('click', function() {
-          $('#screenShareContainer').hide();
-        });
-  
-        // Admin Forms
-        $('#createStudentForm').on('submit', function(e) {
-          e.preventDefault();
-          // Pre-fill the form with Santiago's info for demo purposes
-          $('#studentName').val('Santiago Vargas');
-          $('#studentEmail').val('svargas@mail.com');
-          $('#newStudentUsername').val('SantiagoVargas');
-          $('#newStudentPassword').val('santiago123');
-          $('#studentClass').val('5A');
-          
-          $('#student-created-alert').removeClass('hidden');
-          setTimeout(function() {
-            $('#createStudentForm')[0].reset();
-          }, 2000);
-        });
-  
-        // File Uploads: Call FileMgmtLoop for Grades and Schedule uploads
-        $('#uploadGradesForm').on('submit', async function(e) {
-          e.preventDefault();
-          const fileInput = document.getElementById('gradesPdf');
-          if (fileInput.files.length === 0) {
-            alert('Seleccione un archivo PDF.');
-            return;
-          }
-          const file = fileInput.files[0];
-          const reader = new FileReader();
-          reader.onload = async function(event) {
-            const base64Data = event.target.result.split(',')[1];
-            try {
-              const response = await fetch('https://magicloops.dev/api/loop/0460f11d-7d10-4dea-9ccb-7650f051b8a1/run', {
-                method: 'POST',
-                body: JSON.stringify({ fileType: "grades", fileData: base64Data })
-              });
-              const responseJson = await response.json();
-              alert(`Calificaciones subidas. URL del PDF: ${responseJson.url}`);
-              $('#uploadGradesForm')[0].reset();
-            } catch (error) {
-              console.error(error);
-              alert('Error al subir el PDF.');
-            }
-          };
-          reader.readAsDataURL(file);
-        });
-  
-        $('#uploadScheduleForm').on('submit', async function(e) {
-          e.preventDefault();
-          const fileInput = document.getElementById('schedulePdf');
-          if (fileInput.files.length === 0) {
-            alert('Seleccione un archivo PDF.');
-            return;
-          }
-          const file = fileInput.files[0];
-          const reader = new FileReader();
-          reader.onload = async function(event) {
-            const base64Data = event.target.result.split(',')[1];
-            try {
-              // Re-using FileMgmtLoop for schedule upload (in production could use different fileType)
-              const response = await fetch('https://magicloops.dev/api/loop/0460f11d-7d10-4dea-9ccb-7650f051b8a1/run', {
-                method: 'POST',
-                body: JSON.stringify({ fileType: "grades", fileData: base64Data })
-              });
-              const responseJson = await response.json();
-              alert(`Horario subido. URL del PDF: ${responseJson.url}`);
-              $('#uploadScheduleForm')[0].reset();
-            } catch (error) {
-              console.error(error);
-              alert('Error al subir el PDF.');
-            }
-          };
-          reader.readAsDataURL(file);
-        });
-  
-        // Admin Announcement: Call AnnounceMgmt Loop when creating announcement
-        $('#createAnnouncementForm').on('submit', async function(e) {
-          e.preventDefault();
-          const title = $('#announcementTitle').val();
-          const content = $('#announcementContent').val();
-          const currentDate = getCurrentDate();
-          try {
-            const response = await fetch('https://magicloops.dev/api/loop/0bdcec54-ebf1-4506-bd45-0f6c266690e7/run', {
-              method: 'POST',
-              body: JSON.stringify({ action: "create", announcement: { title, content } })
-            });
-            const responseJson = await response.json();
-            if(responseJson.status === 'success'){
-              const publicAnnouncement = `
-                <div class="announcement">
-                  <h4>${title}</h4>
-                  <p class="text-muted mb-1">Publicado el: ${currentDate}</p>
-                  <p>${content}</p>
-                </div>
-              `;
-              $('#announcements-container').prepend(publicAnnouncement);
-              
-              const adminAnnouncement = `
-                <div class="announcement">
-                  <h4>${title}</h4>
-                  <p class="text-muted mb-1">Publicado el: ${currentDate}</p>
-                  <p>${content}</p>
-                  <button class="btn btn-sm btn-danger delete-announcement">Eliminar</button>
-                </div>
-              `;
-              $('#adminAnnouncementsContainer').prepend(adminAnnouncement);
-              alert('Anuncio publicado exitosamente.');
-              $('#createAnnouncementForm')[0].reset();
-            }
-          } catch (error) {
-            console.error(error);
-            alert('Error al publicar el anuncio.');
-          }
-        });
-  
-        // Delete buttons functionality
-        $(document).on('click', '.delete-announcement', function() {
-          if (confirm('¿Estás seguro de que deseas eliminar este anuncio?')) {
-            $(this).closest('.announcement').remove();
-          }
-        });
-        
-        $(document).on('click', '.delete-student', function() {
-          if (confirm('¿Estás seguro de que deseas eliminar este estudiante?')) {
-            $(this).closest('tr').remove();
-          }
-        });
-        
-        $(document).on('click', '.delete-pdf', function() {
-          if (confirm('¿Estás seguro de que deseas eliminar este PDF?')) {
-            $(this).closest('tr').remove();
-          }
-        });
-        
-        // Edit student
-        $(document).on('click', '.edit-student', function() {
-          const studentId = $(this).data('id');
-          const row = $(this).closest('tr');
-          const name = row.find('td:eq(1)').text();
-          const username = row.find('td:eq(2)').text();
-          const email = row.find('td:eq(3)').text();
-          const studentClass = row.find('td:eq(4)').text();
-          $('#studentName').val(name);
-          $('#studentEmail').val(email);
-          $('#newStudentUsername').val(username);
-          $('#newStudentPassword').val('');
-          $('#studentClass').val(studentClass);
-          $('html, body').animate({ scrollTop: $('#createStudentForm').offset().top - 100 }, 800);
-        });
-        
-        // View PDF button
-        $(document).on('click', '.view-pdf', function() {
-          alert('Este es un prototipo. En la versión completa, aquí se mostraría el PDF seleccionado.');
-        });
-        
-        $(document).on('click', '.replace-pdf', function() {
-          alert('Este es un prototipo. En la versión completa, aquí se abriría un formulario para reemplazar el PDF.');
-        });
-
-        // Load announcements dynamically
-        function loadAnnouncements() {
-          const announcements = JSON.parse(localStorage.getItem('announcements')) || [];
-          const container = $('#announcements-container');
-          container.empty();
-          announcements.forEach((announcement) => {
-            container.append(`
-              <div class="announcement">
-                <h4>${announcement.title}</h4>
-                <p>${announcement.content}</p>
-              </div>
-            `);
-          });
-        }
-
-        // Initial load of announcements
-        loadAnnouncements();
+        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Evitar valores negativos
       });
-  
-      function getCurrentDate() {
-        const now = new Date();
-        return `${now.getDate().toString().padStart(2, '0')}/${(now.getMonth() + 1).toString().padStart(2, '0')}/${now.getFullYear()}`;
-      }
-      
-      function showStudentDashboard() {
-        $('#login, #admin-login-section').addClass('hidden');
-        $('#student-dashboard').removeClass('hidden');
-        $('#studentLoginNavItem, #adminLoginNavItem').addClass('hidden');
-        $('#logoutNavItem').removeClass('hidden');
-        $('html, body').animate({ scrollTop: $('#student-dashboard').offset().top - 70 }, 300);
-      }
-      
-      function showAdminDashboard() {
-        $('#login, #admin-login-section').addClass('hidden');
-        $('#admin-dashboard').removeClass('hidden');
-        $('#studentLoginNavItem, #adminLoginNavItem').addClass('hidden');
-        $('#logoutNavItem').removeClass('hidden');
-        $('html, body').animate({ scrollTop: $('#admin-dashboard').offset().top - 70 }, 300);
-      }
-      
-      function loadTeachers() {
-        const teachers = [
-          { name: "Lic. María Rodríguez", subject: "Matemáticas", photoUrl: "https://source.unsplash.com/random/150x150/?woman" },
-          { name: "Lic. Carlos Mendoza", subject: "Literatura", photoUrl: "https://source.unsplash.com/random/150x150/?man" },
-          { name: "Lic. Ana López", subject: "Ciencias Naturales", photoUrl: "https://source.unsplash.com/random/150x150/?woman,teacher" },
-          { name: "Lic. Roberto Gutiérrez", subject: "Historia", photoUrl: "https://source.unsplash.com/random/150x150/?man,professor" },
-          { name: "Lic. Patricia Flores", subject: "Inglés", photoUrl: "https://source.unsplash.com/random/150x150/?woman,glasses" },
-          { name: "Lic. Juan Martínez", subject: "Educación Física", photoUrl: "https://source.unsplash.com/random/150x150/?coach" }
-        ];
-        let teachersHTML = '';
-        teachers.forEach(teacher => {
-          teachersHTML += `
-            <div class="col-md-4 mb-4">
-              <div class="card teacher-card">
-                <div class="card-body">
-                  <img src="${teacher.photoUrl}" class="teacher-img" alt="${teacher.name}">
-                  <h5 class="card-title">${teacher.name}</h5>
-                  <p class="card-text">${teacher.subject}</p>
-                </div>
+
+      const track = document.querySelector('.carousel-track');
+      const images = Array.from(track.children);
+      const prevButton = document.getElementById('prevButton');
+      const nextButton = document.getElementById('nextButton');
+      const imageWidth = images[0].getBoundingClientRect().width;
+
+      let currentIndex = 0;
+
+      const moveToImage = (index) => {
+        track.style.transform = `translateX(-${index * imageWidth}px)`;
+      };
+
+      prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+        moveToImage(currentIndex);
+      });
+
+      nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+        moveToImage(currentIndex);
+      });
+
+      // Reactivar funcionalidad de la API para "Contáctanos"
+      document.getElementById('contactForm').addEventListener('submit', async function (e) {
+        e.preventDefault();
+
+        const name = encodeURIComponent(document.getElementById('name').value);
+        const email = encodeURIComponent(document.getElementById('email').value);
+        const message = encodeURIComponent(document.getElementById('message').value);
+
+        const apiUrl = `https://magicloops.dev/api/loop/6cc17cc3-1d9a-4fe2-bb69-b3ba7345fc2c/run?name=${name}&email=${email}&message=${message}`;
+
+        try {
+          const response = await fetch(apiUrl, {
+            method: 'GET',
+          });
+
+          if (!response.ok) {
+            throw new Error('Error al enviar el mensaje.');
+          }
+
+          const responseData = await response.json();
+          alert(`Mensaje enviado exitosamente. Confirmación: ${responseData.confirmationId}`);
+          document.getElementById('contactForm').reset();
+        } catch (error) {
+          console.error('Error:', error);
+          alert('Hubo un problema al enviar el mensaje. Por favor, inténtalo de nuevo más tarde.');
+        }
+      });
+
+      // Cargar anuncios desde localStorage con diseño
+      function loadAnnouncements() {
+        const announcements = JSON.parse(localStorage.getItem('announcements')) || [];
+        const container = document.getElementById('announcements-container');
+        container.innerHTML = ''; // Limpiar contenedor
+
+        announcements.forEach((announcement) => {
+          const announcementElement = document.createElement('div');
+          announcementElement.classList.add('col-md-4', 'mb-4');
+          announcementElement.innerHTML = `
+            <div class="card shadow-sm h-100">
+              <div class="card-body">
+                <h5 class="card-title fw-bold text-dark">${announcement.title}</h5>
+                <p class="card-text fs-5 text-dark">${announcement.content}</p>
               </div>
             </div>
           `;
+          container.appendChild(announcementElement);
         });
-        $('#teachersContainer').html(teachersHTML);
       }
-      
-      function initWhiteboard() {
-        $('#whiteboard-container').html('<div class="text-center p-5 bg-light"><p>Pizarra Digital</p><p>En la versión completa, aquí se mostraría la pizarra colaborativa en tiempo real.</p></div>');
-      }
-    </script>
-    <script>
-      $(document).ready(function() {
-        // Toggle password visibility for student login
-        $('#toggleStudentPassword').on('click', function() {
-          const passwordField = $('#studentPassword');
-          const icon = $(this).find('i');
-          if (passwordField.attr('type') === 'password') {
-            passwordField.attr('type', 'text');
-            icon.removeClass('fa-eye').addClass('fa-eye-slash');
-          } else {
-            passwordField.attr('type', 'password');
-            icon.removeClass('fa-eye-slash').addClass('fa-eye');
-          }
-        });
 
-        // Toggle password visibility for admin login
-        $('#toggleAdminPassword').on('click', function() {
-          const passwordField = $('#adminPassword');
-          const icon = $(this).find('i');
-          if (passwordField.attr('type') === 'password') {
-            passwordField.attr('type', 'text');
-            icon.removeClass('fa-eye').addClass('fa-eye-slash');
-          } else {
-            passwordField.attr('type', 'password');
-            icon.removeClass('fa-eye-slash').addClass('fa-eye');
-          }
-        });
-
-        // Admin Login: Redirect to admins.html on successful login
-        $('#adminLoginForm').on('submit', function(e) {
-          e.preventDefault();
-          const username = $('#adminUsername').val();
-          const password = $('#adminPassword').val();
-
-          if (username === 'admin' && password === 'admin123') {
-            window.location.href = 'admins.html'; // Redirect to admins.html
-          } else {
-            alert('Error de autenticación de administrador. Usuario o contraseña incorrectos.');
-          }
-        });
-      });
+      // Llamar a la función al cargar la página
+      document.addEventListener('DOMContentLoaded', loadAnnouncements);
     </script>
   </body>
 </html>
